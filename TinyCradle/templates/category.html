@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <center>
+<img src="{% static 'images/babyshopee.jpg' %}" height="500px" width="1500px">
+    </center>
+</div>
+<div class="continer-fluid mt-4" style="margin-bottom:100px;">
+    <h3 class="text-center text-warning fw-bold"><b>TINY TRENDS,BIG SMILES!!!</b></h3>
+    <h5 style="line-height:2;text-align:center;" >Welcome to our baby shop,where tiny dreams come wrapped in love.We belive in creating a haven for little ones,offering adorable essentials that celebrate the magic of babyhood.From cuddles togiggles,each product is carefully selected to ensure that every moment with your little miracle is filled with joy and cuteness.Our collection is a reflection of belief that every baby deserves the best ,with tiny treasures that leave endless smiles and imprints on your heart.Explore the sweetness of babyhood,discover the little moments that create big memories,and surround your little one with the love and warmth they deserve.Because, at our baby shop ,we understand that babies make everything better, and every product tells a story of love.</h5>
+</div>
+
+
+<div class="container-fluid mt-5" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-4">
+            <div class="card" style="width: 25rem" ;>
+  <img src="{{i.image.url}}" class="card-img-top" height="150px" width="100%" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{i.name}}</h5>
+    <p class="card-text ">{{i.desc}}</p>
+      <a href="{% url 'shop:allproducts' i.name %} "  style="position:relative;left:30%;" class="btn btn-primary">PRODUCTS</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

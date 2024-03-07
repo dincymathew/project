@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="cointainer-fluid mt-5" style="...">
+<h2>LOGIN PAGE</h2>
+<form method="POST" >
+    {% csrf_token %}
+ <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input type="text" class="form-control" name="u" placeholder="Enter the username">
+    </div>
+        <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="text" class="form-control" name="p" placeholder="Enter the password">
+    </div>
+
+    <div class="mb-3">
+        <input type="submit" class="form-control">
+    </div>
+
+</form>
+{% if message %}
+{% for i in messages %}
+<ul>
+    <li>{{i}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+    </div>
+{% endblock %}

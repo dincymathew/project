@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="cointainer-fluid mt-5" style="margin-bottom:60px;">
+<div class="row">
+    <h5 class="text-center"><b>Name of the customer:{{u}}</b></h5>
+
+    {% for i in o %}
+    <div class="col-sm-3 py-3" style="...">
+        <img src="{{i.product.image.url}}" height="150px" width="150px">
+        </div>
+
+            <div class="col-sm-7 text-center" style="...">
+               <b> Order address:</b>{{i.address}}</br>
+               <b> Customer Phone number:</b>{{i.phone}}</br>
+               <b> Product name:</b>{{i.product.name}}</br>
+                <b>Product price:</b>{{i.product.price}}</br>
+               <b> Ordered on:</b>{{i.date_ordered}}</br>
+                <b>Delivary status:</b>{{i.delivary_status}}</br>
+
+
+            </div>
+    {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
